@@ -4,13 +4,15 @@
     "main": "index.js",
     "scripts": {
         "start": "parcel index.html",
-        "dist": "parcel build index.html"
+        "dist": "rm -rf dist/* && parcel build index.html"
     },
     "author": "xuejian.xu",
     "license": "MIT",
     "dependencies": {
         "babel": "^6.23.0",
         "babel-plugin-transform-react-jsx": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "node-sass": "^4.7.2",
         "parcel-bundler": "^1.5.1",
         "preact": "^8.2.7"
     }
