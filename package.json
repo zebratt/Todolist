@@ -1,0 +1,17 @@
+{
+    "name": "Todolist",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "parcel index.html",
+        "dist": "parcel build index.html"
+    },
+    "author": "xuejian.xu",
+    "license": "MIT",
+    "dependencies": {
+        "babel": "^6.23.0",
+        "babel-plugin-transform-react-jsx": "^6.24.1",
+        "parcel-bundler": "^1.5.1",
+        "preact": "^8.2.7"
+    }
+}
