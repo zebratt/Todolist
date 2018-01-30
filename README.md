@@ -7,5 +7,5 @@
 * data: rxjs
 * bundler: parcel
 
-dev: yarn start
-dist: yarn run dist
+- yarn start
+- yarn run dist
