@@ -1,5 +1,13 @@
+$pageMargin: 50px;
+
 .g-page-home {
+    position: absolute;
+    top: $pageMargin;
+    right: $pageMargin;
+    bottom: $pageMargin;
+    left: $pageMargin;
     display: flex;
+    border: #e5e5e5 solid 1px;
 
     .content-main {
         flex: 1;

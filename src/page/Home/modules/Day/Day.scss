@@ -1,5 +1,7 @@
 .m-day {
     width: 10%;
+    height: 100%;
+    overflow: scroll;
     border-right: #e5e5e5 solid 1px;
 
     .item {
@@ -8,5 +10,9 @@
         color: #333;
         font-size: 15px;
         border-bottom: #e5e5e5 solid 1px;
+
+        &:nth-last-child(1){
+            border-bottom: 0;
+        }
     }
 }
