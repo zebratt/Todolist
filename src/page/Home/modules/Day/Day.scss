@@ -1,8 +1,8 @@
 .m-day {
     width: 10%;
     height: 100%;
-    overflow: scroll;
     border-right: #e5e5e5 solid 1px;
+    overflow: hidden;
 
     .item {
         text-align: center;
