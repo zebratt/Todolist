@@ -13,5 +13,27 @@ $pageMargin: 50px;
         flex: 1;
         padding: 20px;
         
+        .title{
+            .btn-add{
+                float: right;
+                background: rgb(8, 120, 212);
+                color: #fff;
+                font-size: 16px;
+                border-radius: 4px;
+                padding: 4px 20px;
+            }
+        }
+
+        .items{
+            margin-top: 20px;
+
+            .item{
+                padding: 5px 10px;
+
+                span{
+                    margin-left: 10px;
+                }
+            }
+        }
     }
 }
