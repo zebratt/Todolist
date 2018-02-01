@@ -1,10 +1,10 @@
-import './Day.scss'
-import { h, Component } from 'preact'
+import './style.scss'
+import React from 'react'
 import IScroll from 'iscroll/build/iscroll-lite'
 
 const days = 31
 
-class Day extends Component {
+class Day extends React.Component {
     domDays
     componentDidMount() {
         new IScroll(this.domDays)

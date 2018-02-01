@@ -1,9 +1,9 @@
-import './Month.scss'
-import { h, Component } from 'preact'
+import './style.scss'
+import React from 'react'
 
 const months = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
 
-class Month extends Component {
+class Month extends React.Component {
     render() {
         return (
             <div className="m-month">
