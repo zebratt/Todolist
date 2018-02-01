@@ -15,7 +15,6 @@
         "iscroll": "^5.2.0",
         "node-sass": "^4.7.2",
         "parcel-bundler": "^1.5.1",
-        "preact": "^8.2.7",
-        "rxjs": "^5.5.6"
+        "preact": "^8.2.7"
     }
 }
