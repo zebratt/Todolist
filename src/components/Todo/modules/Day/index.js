@@ -5,9 +5,8 @@ import IScroll from 'iscroll/build/iscroll-lite'
 const days = 31
 
 class Day extends React.Component {
-    domDays
     componentDidMount() {
-        new IScroll(this.domDays)
+        new IScroll('.m-day')
     }
     renderDays = () => {
         const doms = []
@@ -24,12 +23,7 @@ class Day extends React.Component {
     }
     render() {
         return (
-            <div
-                className="m-day"
-                ref={dom => {
-                    this.domDays = dom
-                }}
-            >
+            <div className="m-day">
                 <ul>{this.renderDays()}</ul>
             </div>
         )
