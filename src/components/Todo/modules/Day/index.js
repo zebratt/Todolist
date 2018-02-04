@@ -1,6 +1,7 @@
 import './style.scss'
 import React from 'react'
 import IScroll from 'iscroll/build/iscroll-lite'
+import classNames from 'classnames'
 
 const days = 31
 
@@ -10,10 +11,21 @@ class Day extends React.Component {
     }
     renderDays = () => {
         const doms = []
+        const { currDay, clickHandler } = this.props
 
         for (let i = 1; i <= days; i++) {
+            const styles = classNames({
+                item: true,
+                active: currDay === i
+            })
             doms.push(
-                <li key={i} className="item">
+                <li
+                    key={i}
+                    className={styles}
+                    onClick={() => {
+                        clickHandler(i)
+                    }}
+                >
                     {i}
                 </li>
             )

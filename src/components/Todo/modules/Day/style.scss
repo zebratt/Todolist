@@ -9,9 +9,19 @@
         color: #333;
         font-size: 15px;
         border-bottom: #e5e5e5 solid 1px;
+        cursor: pointer;
 
-        &:nth-last-child(1){
+        &:nth-last-child(1) {
             border-bottom: 0;
         }
+
+        &:hover{
+            border-bottom: #2965A8 solid 2px;
+        }
+    }
+
+    .active {
+        background: rgb(47, 112, 177);
+        color: #fff;
     }
 }

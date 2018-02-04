@@ -15,13 +15,16 @@ $pageMargin: 50px;
         padding: 20px;
         
         .title{
+            overflow: hidden;
+
             .btn-add{
                 float: right;
-                background: rgb(8, 120, 212);
+                background: rgb(47, 112, 177);
                 color: #fff;
                 font-size: 16px;
                 border-radius: 4px;
-                padding: 4px 20px;
+                padding: 8px 20px;
+                cursor: pointer;
             }
         }
 
@@ -30,10 +33,6 @@ $pageMargin: 50px;
 
             .item{
                 padding: 5px 10px;
-
-                span{
-                    margin-left: 10px;
-                }
             }
         }
     }

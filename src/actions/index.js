@@ -1,5 +1,5 @@
-import todoAction from './TodoAction'
+import todoActions from './TodoAction'
 
-export default {
-    todoAction
+export {
+    todoActions
 }

@@ -2,22 +2,31 @@ import './style.scss'
 import React from 'react'
 import Month from './modules/Month'
 import Day from './modules/Day'
-import actions from '../../actions'
+import { todoActions } from '../../actions'
 import { observer, inject } from 'mobx-react'
+import { Checkbox } from 'antd'
 
-@inject('todoStore')
+@inject(store => ({ ...store.todoStore }))
 @observer
 export default class TodoList extends React.Component {
-    componentDidMount() {
-        actions.todoAction()
-    }
+    componentDidMount() {}
     render() {
-        const { todoStore: { todos } } = this.props
+        const { todos, currMonth, currDay } = this.props
 
         return (
             <div className="g-page-home">
-                <Month />
-                <Day />
+                <Month
+                    currMonth={currMonth}
+                    clickHandler={nextMonth => {
+                        todoActions.updateMonth(nextMonth)
+                    }}
+                />
+                <Day
+                    currDay={currDay}
+                    clickHandler={nextDay => {
+                        todoActions.updateDay(nextDay)
+                    }}
+                />
                 <div className="content-main">
                     <div className="title">
                         <button className="btn-add">添加项目</button>
@@ -25,8 +34,7 @@ export default class TodoList extends React.Component {
                     <ul className="items">
                         {todos.map((todo, idx) => (
                             <li key={idx} className="item">
-                                <input className="checkbox" type="checkbox" />
-                                <span>{todo.content}</span>
+                                <Checkbox>{todo.content}</Checkbox>
                             </li>
                         ))}
                     </ul>
