@@ -34,7 +34,7 @@ export default class TodoList extends React.Component {
         const { currMonth, currDay } = this.props
         const date = `2018-${currMonth}-${currDay}`
         const content = this.newItemValue
-        const res = await ApiService.post('http://localhost:4000/api/todos/save', {
+        const res = await ApiService.post('/api/todos/save', {
             date,
             content
         })
