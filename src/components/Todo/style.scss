@@ -17,13 +17,10 @@ $pageMargin: 50px;
         .title{
             overflow: hidden;
 
-            .btn-add{
+            .icon-add{
                 float: right;
-                background: rgb(47, 112, 177);
-                color: #fff;
-                font-size: 16px;
-                border-radius: 4px;
-                padding: 8px 20px;
+                color: #2965A8;
+                font-size: 30px;
                 cursor: pointer;
             }
         }
@@ -34,6 +31,10 @@ $pageMargin: 50px;
             .item{
                 padding: 5px 10px;
             }
+        }
+
+        .completed{
+            text-decoration: line-through;
         }
     }
 }

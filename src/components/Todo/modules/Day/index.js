@@ -3,7 +3,7 @@ import React from 'react'
 import IScroll from 'iscroll/build/iscroll-lite'
 import classNames from 'classnames'
 
-const days = 31
+const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 class Day extends React.Component {
     componentDidMount() {
@@ -11,9 +11,9 @@ class Day extends React.Component {
     }
     renderDays = () => {
         const doms = []
-        const { currDay, clickHandler } = this.props
+        const { currDay, currMonth, clickHandler } = this.props
 
-        for (let i = 1; i <= days; i++) {
+        for (let i = 1; i <= days[currMonth]; i++) {
             const styles = classNames({
                 item: true,
                 active: currDay === i

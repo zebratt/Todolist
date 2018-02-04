@@ -1,11 +1,12 @@
 import todoStore from '../../store/TodoStore'
+import ApiService from '../../service/ApiService'
 
-const getTodos = date => {
-    fetch('//localhost:9999/api/todos')
-        .then(res => res.json())
-        .then(data => {
-            todoStore.mergeTodos(data)
-        })
+const loadTodos = async (date) => {
+    const res = await ApiService.get(`http://localhost:4000/api/todos/query/${date}`)
+
+    if(res.code === 0){
+        todoStore.loadTodos(res.data)
+    }
 }
 
 const updateMonth = month => {
@@ -16,8 +17,18 @@ const updateDay = day => {
     todoStore.updateCurrDay(day)
 }
 
+const insertNewItem = (item) => {
+    todoStore.insertNewItem(item)
+}
+
+const updateItem = async (nextItem) => {
+    await ApiService.post('http://localhost:4000/api/todos/update', nextItem)
+}
+
 export default {
-    getTodos,
+    loadTodos,
     updateMonth,
-    updateDay
+    updateDay,
+    updateItem,
+    insertNewItem
 }

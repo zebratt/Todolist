@@ -1,4 +1,5 @@
 import { observable, action } from 'mobx'
+import filter from 'lodash/filter'
 
 class TodoStore {
     @observable todos
@@ -8,24 +9,16 @@ class TodoStore {
     constructor() {
         const today = new Date()
 
-        this.todos = [
-            {
-                content: 'aaa',
-                completed: false
-            },
-            {
-                content: 'bbb',
-                completed: true
-            }
-        ]
+        this.todos = []
         this.currMonth = today.getMonth()
         this.currDay = today.getDate()
     }
 
     @action
-    mergeTodos = nextTodos => {
-        nextTodos.forEach(nTodo => {
-            this.todos.push(nTodo)
+    loadTodos = nextTodos => {
+        this.todos.clear()
+        nextTodos.forEach(item => {
+            this.todos.push(item)
         })
     }
 
@@ -37,6 +30,11 @@ class TodoStore {
     @action
     updateCurrDay = nextDay => {
         this.currDay = nextDay
+    }
+
+    @action
+    insertNewItem = item => {
+        this.todos.push(item)
     }
 }
 
