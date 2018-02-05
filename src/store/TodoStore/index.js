@@ -1,5 +1,4 @@
 import { observable, action } from 'mobx'
-import filter from 'lodash/filter'
 
 class TodoStore {
     @observable todos
